@@ -1,6 +1,6 @@
   List of Feautres:
 1. Team based game (2 teams, 2 corner respawn points)
-2. Scoreboard (team and indiviual)
+2. Scoreboard (team, individual and alltime leaderboard)
 3. You collect slices of pizza and deliver them to certain locations to get money (score)
 4. Attack button that disable players for a couple seconds (5s recharge)
 5. Animated sprites
@@ -8,6 +8,8 @@
 7. Saved personal score on account, team score resets every 10 minutes (10 minute rounds to decide winner and loser)
 8. Limit on how many slices you can carry, requires restocking
 9. Personalised delivery locations - randomised every time you deliver
+10. Chat system both team-only and global
+
 
 
   Meet-ups:
