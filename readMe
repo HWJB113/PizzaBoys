@@ -9,6 +9,8 @@
 8. Limit on how many slices you can carry, requires restocking
 9. Personalised delivery locations - randomised every time you deliver
 10. Chat system both team-only and global
+11. fully functional mySQL database with password encrytion and managed using phpmyadmin
+12. front end website using php
 
 
 
