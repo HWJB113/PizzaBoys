@@ -28,3 +28,14 @@ Week 3: Aim to start making a base version of the game itself most likely single
 
 
 
+Delegation of Tasks:
+
+Joe – Game Screen Wireframe, movement element of game
+
+Liam – Scoreboard (linked with database) and score mechanic
+ 
+Nathanael – Objective spawns, and obstacle developing, creating game map
+
+Jake – Keep read me updated, work on paralaxing for game screen.
+
+Q – developing most server side aspects. Database to store player details etc.
