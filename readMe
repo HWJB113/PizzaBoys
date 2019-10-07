@@ -1,4 +1,34 @@
-  List of Feautres:
+WEB PROGRAMMING COURSEWORK - PIZZA BOYS
+
+
+Team Members:
+
+- Joe Morwood
+
+- Liam Sneddon
+
+- Jake Barr
+
+- Nathanael Brown
+
+- Qamar Zaman
+
+
+
+Delegation of Tasks:
+
+Joe – Game Screen Wireframe, movement element of game - JS/FLOATING
+
+Liam – Scoreboard (linked with database) and score mechanic - CSS
+ 
+Nathanael – Objective spawns, and obstacle developing, creating game map - HTML
+
+Jake – Keep read me updated, work on paralaxing for game screen. - JS/FLOATING
+
+Q – developing most server side aspects. - SERVERSIDE
+
+
+List of Feautres:
 1. Team based game (2 teams, 2 corner respawn points)
 2. Scoreboard (team, individual and alltime leaderboard)
 3. You collect slices of pizza and deliver them to certain locations to get money (score)
@@ -10,7 +40,7 @@
 9. Personalised delivery locations - randomised every time you deliver
 10. Chat system both team-only and global
 11. fully functional mySQL database with password encrytion and managed using phpmyadmin
-12. front end website using php
+12. Login page using PHP (after discovering PHP was not suitable for Game Data Management, decided to scale back use of PHP)
 
 
 
@@ -28,14 +58,4 @@ Week 3: Aim to start making a base version of the game itself most likely single
 
 
 
-Delegation of Tasks:
-
-Joe – Game Screen Wireframe, movement element of game
-
-Liam – Scoreboard (linked with database) and score mechanic
- 
-Nathanael – Objective spawns, and obstacle developing, creating game map
-
-Jake – Keep read me updated, work on paralaxing for game screen.
-
-Q – developing most server side aspects. Database to store player details etc.
+.
