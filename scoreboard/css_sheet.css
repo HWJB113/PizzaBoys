@@ -1,17 +1,27 @@
-body {
-    background-color: grey;
-}
-
-.pizzashed {
-    padding-left: 90px;
-    width: 400px;
-    padding-top: 100px;
-    position: absolute;
-}
-
-.daddyjohns {
-    width: 400px;
-    margin-left: 600px;
-    padding-top: 100px;
-    position: absolute;
-}
+    .body {
+        background-color: grey;
+    }
+    
+    .box {
+        background-color: yellow;
+        width: 135px;
+        border: 5px solid orangered;
+        padding: 10px;
+        font-size: 25px;
+    }
+    
+    .pizzashed {
+        right: 1750px;
+        position: absolute;
+        text-align: center;
+    }
+    
+    .daddyjohns {
+        left: 1750px;
+        position: absolute;
+        text-align: center;
+    }
+    
+    .score {
+        font-size: 20px;
+    }
