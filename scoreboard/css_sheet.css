@@ -1,0 +1,17 @@
+body {
+    background-color: grey;
+}
+
+.pizzashed {
+    padding-left: 90px;
+    width: 400px;
+    padding-top: 100px;
+    position: absolute;
+}
+
+.daddyjohns {
+    width: 400px;
+    margin-left: 600px;
+    padding-top: 100px;
+    position: absolute;
+}
