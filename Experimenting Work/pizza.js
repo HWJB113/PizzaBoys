@@ -1,5 +1,6 @@
 function movement() {
 var MoveUp = false;
+var MoveDownRight = false;
 var MoveRight = false;
 var MoveDown = false;
 var LastDirection;
@@ -11,6 +12,14 @@ var ycoord= 400;
 document.addEventListener('keydown', BeginMovement)
 
 function BeginMovement(x) {
+
+  if (x.keyCode === 37 && x.keyCode === 39)  {
+    MoveDownRight = true;
+    NewDirection = 4;
+
+
+
+}
     if (x.keyCode === 38) { 
         MoveUp = true;
         NewDirection = 0;
@@ -38,6 +47,8 @@ function BeginMovement(x) {
 
     }
 
+    
+
     ChangeDirection(NewDirection);
    
     }
@@ -45,6 +56,11 @@ function BeginMovement(x) {
  document.addEventListener('keyup', releaseKey)
 
  function releaseKey(x) {
+
+  if (x.keyCode === 37 && x.keyCode === 39)  {
+    MoveDownRight = false;
+    LastDirection = 4;
+}
     if (x.keyCode === 38) { 
          MoveUp = false;
          LastDirection = 0;
@@ -64,6 +80,7 @@ function BeginMovement(x) {
              MoveLeft = false;
              LastDirection = 3;
          }
+
     
     }
 
@@ -111,6 +128,10 @@ function ChangeDirection(NewDirection){
             document.getElementById("player").src="./Images/spiderL.gif"
             LastDirection = NewDirection;
         }
+        if (NewDirection === 4){
+          document.getElementById("player").src="./Images/spiderRD.gif"
+          LastDirection = NewDirection;
+      }
     }
 }
 window.requestAnimationFrame(Movementloop)

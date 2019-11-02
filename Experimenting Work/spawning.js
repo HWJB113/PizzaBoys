@@ -4,7 +4,7 @@ $(function(){
     var canvas=document.getElementById("gamemap");
     var ctx=canvas.getContext("2d");
 
-    var spawnRate=1500;
+    var spawnRate=50;
 
     var spawnRateOfDescent=0.50;
 
