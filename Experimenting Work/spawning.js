@@ -3,7 +3,9 @@ $(function(){
 
     var canvas=document.getElementById("gamemap");
     var ctx=canvas.getContext("2d");
-
+    ctx.canvas.width  = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+   
     var spawnRate=50;
 
     var spawnRateOfDescent=0.50;

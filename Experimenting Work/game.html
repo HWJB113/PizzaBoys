@@ -1,14 +1,34 @@
 <html>
 
 <script type="text/javascript" src="pizza.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="spawning.js"></script>
+<link rel="stylesheet" type="text/css" href="gameLook.css" />
 
 <head>
     <script>movement()</script>
 </head>
 
  <body>
- 
+  <div class="Pizza_Shack">
+        <div class="box">
+            <p>Pizza Shack</p>
+            <div class="score">
+                <p>20</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="Father_Johns">
+        <div class="box">
+            <p>Father John's</p>
+            <div class="score">
+                <p>20</p>
+            </div>
+        </div>
+    </div>
     <div id ="playerDiv" style = position:fixed ><img id ="player" src = "./Images/spiderR.gif"/></div>
+    <canvas id="gamemap" width=100% height=100%></canvas>
 
 </body>
 
