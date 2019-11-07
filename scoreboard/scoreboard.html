@@ -11,9 +11,20 @@
 
         <div class="box">
             <p>Pizza Shack</p>
-            <div class="score">
+            <div class="team_score">
                 <p id="ps_score"></p>
             </div>
+
+            <div class="top_score">
+                <ol id="ps_top">
+                    <li id="top_1"> </li>
+                    <li id="top_2"> </li>
+                    <li id="top_3"> </li>
+                    <li id="top_4"> </li>
+                    <li id="top_5"> </li>
+                </ol>
+            </div>
+
             <button id="test1">Click me! hehe</button>
         </div>
     </div>
@@ -21,8 +32,8 @@
     <div class="Father_Johns">
         <div class="box">
             <p>Father John's</p>
-            <div class="score">
-                <p id="dj_score"> </p>
+            <div class="team_score">
+                <p id="fj_score"> </p>
             </div>
             <button id="test2">Click me! hehe</button>
         </div>
@@ -32,23 +43,44 @@
     
 <script>
         var team_ps_score = 0
-        var team_dj_score = 0
-        var button_dj = document.getElementById("test2")
+        var team_fj_score = 0
+        var button_fj = document.getElementById("test2")
         var button_ps = document.getElementById("test1")
+
+        var top_scores = [15,56,34,3,21]
+
+        score_sorting = function() {
+         top_scores.sort((a, b) => b - a);
+
+        document.getElementById('top_1').innerHTML = "" + top_scores[0];
+        document.getElementById('top_2').innerHTML = "" + top_scores[1];
+        document.getElementById('top_3').innerHTML = "" + top_scores[2];
+        document.getElementById('top_4').innerHTML = "" + top_scores[3];
+        document.getElementById('top_5').innerHTML = "" + top_scores[4];
+
+        top_scores.push(69)
+        }
+
+        
+        setInterval( score_sorting, 0.01*60*1000 );
+
+
+
 
         button_ps.onclick = function() {
         team_ps_score += 1;
         document.getElementById('ps_score').innerHTML = "" + team_ps_score;
         };
 
-        button_dj.onclick = function() {
-        team_dj_score += 1;
-        document.getElementById('dj_score').innerHTML = "" + team_dj_score;
+        button_fj.onclick = function() {
+        team_fj_score += 1;
+        document.getElementById('fj_score').innerHTML = "" + team_fj_score;
         };
 
         document.getElementById('ps_score').innerHTML = "" + team_ps_score;
-        document.getElementById('dj_score').innerHTML = "" + team_dj_score;
-    </script>
+        document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+ 
+</script>
 
 
 
