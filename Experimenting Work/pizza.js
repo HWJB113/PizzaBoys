@@ -141,14 +141,15 @@ $(function(){
 
     var canvas=document.getElementById("gamemap");
     var ctx=canvas.getContext("2d");
-    var img = document.getElementById("Test.png");
+
+    //var img = document.getElementById("Test.png");
     
     ctx.canvas.width  = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
     
-    var spawnRate=50;
+    var spawnRate=1000;
 
-    var spawnRateOfDescent=0.50;
+   
 
     var lastSpawn=-1;
 
@@ -156,23 +157,28 @@ $(function(){
 
     var startTime=Date.now();
 
+    var pizza = new Image();
+    pizza.src = "images/pizza.png"
+
     animate();
 
     function spawnRandomObject(){
 
-        var t = "Test";
 
         var object={
 
-            type:t, 
+            
 
             x:Math.random()*(canvas.width-30)+15,
 
             y:Math.random() * (canvas.height) + 100 ,
+
+            image: pizza
         }
 
 
         objects.push(object);
+       
     }
 
 
@@ -189,22 +195,14 @@ $(function(){
 
         requestAnimationFrame(animate);
 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-
-
-        for(var i=0;i<objects.length;i++){
-            var object=objects[i];
-            ctx.beginPath();
-            ctx.arc(object.x,object.y,8,0,Math.PI*2);
-            ctx.closePath();
-            ctx.fillStyle=object.type;
-            ctx.fill();
+        for (var i = 0; i < objects.length; i++) {
+            var object = objects[i];
+            ctx.drawImage(object.image, object.x, object.y, 30, 30);
         }
-
+        
     }
-    ctx.drawImage(img, 10, 10);
 });
 }
 
