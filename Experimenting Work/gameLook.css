@@ -1,2 +1,44 @@
-body { }
-div { position: fixed;}
+.body {
+    background-color: grey;
+  
+}
+
+.box {
+    border-radius: 50%;
+    border: 5px solid #d90d0d;
+    
+    width: 135px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.Pizza_Shack {
+    border-radius: 50%;
+    
+
+    background-color: #edab02 ;
+    border: 7px solid brown;
+    
+    right: 2%;
+     
+   
+    position: fixed;
+    text-align: center;
+}
+
+.Father_Johns {
+    border-radius: 50%;
+    
+
+    background-color: #edab02 ;
+    border: 7px solid brown;
+    
+    left: 2%;
+    
+    position: fixed;
+    text-align: center;
+}
+
+.score {
+    font-size: 20px;
+}

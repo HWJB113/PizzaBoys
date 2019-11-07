@@ -1,24 +1,41 @@
     .body {
         background-color: grey;
+      
     }
     
     .box {
-        background-color: yellow;
+        border-radius: 50%;
+        border: 5px solid #d90d0d;
+        
         width: 135px;
-        border: 5px solid orangered;
         padding: 10px;
         font-size: 25px;
     }
     
-    .pizzashed {
-        right: 1750px;
-        position: absolute;
+    .Pizza_Shack {
+        border-radius: 50%;
+        
+
+        background-color: #edab02 ;
+        border: 7px solid brown;
+        
+        right: 2%;
+         
+       
+        position: fixed;
         text-align: center;
     }
     
-    .daddyjohns {
-        left: 1750px;
-        position: absolute;
+    .Father_Johns {
+        border-radius: 50%;
+        
+
+        background-color: #edab02 ;
+        border: 7px solid brown;
+        
+        left: 2%;
+        
+        position: fixed;
         text-align: center;
     }
     
