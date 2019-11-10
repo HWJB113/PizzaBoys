@@ -8,38 +8,48 @@ var NewDirection;
 var MoveLeft = false;
 var xcoord = 400;
 var ycoord= 400;
+var music;
+music = new Audio("PizzaTime.ogg");
+music.addEventListener('ended', LoopMusic)
 
+
+function LoopMusic(){
+	music.currentTime = 0;
+    music.play();
+}
 document.addEventListener('keydown', BeginMovement)
 
 function BeginMovement(x) {
-
-  if (x.keyCode === 37 && x.keyCode === 39)  {
+  music.play();
+  if (x.keyCode === 65 && x.keyCode === 39)  {
     MoveDownRight = true;
     NewDirection = 4;
 
 
 
 }
-    if (x.keyCode === 38) { 
+    if (x.keyCode === 87) { 
         MoveUp = true;
         NewDirection = 0;
         
     }
 
-    if (x.keyCode === 39)  {
+    if (x.keyCode === 68)  {
         MoveRight = true;
         NewDirection = 1;
+		if(xcoord > window.innerWidth * 0.7){
+		window.scrollBy(10,0);}
 
 
     }
 
-    if (x.keyCode === 40)  {
+    if (x.keyCode === 83)  {
         MoveDown = true;
         NewDirection = 2;
 
     }
 
-    if (x.keyCode === 37)  {
+    if (x.keyCode === 65)  {
         MoveLeft = true;
         NewDirection = 3;
     
@@ -57,26 +67,26 @@ function BeginMovement(x) {
 
  function releaseKey(x) {
 
-  if (x.keyCode === 37 && x.keyCode === 39)  {
+  if (x.keyCode === 65 && x.keyCode === 39)  {
     MoveDownRight = false;
     LastDirection = 4;
 }
-    if (x.keyCode === 38) { 
+    if (x.keyCode === 87) { 
          MoveUp = false;
          LastDirection = 0;
     }
 
-        if (x.keyCode === 39)  {
+        if (x.keyCode === 68)  {
             MoveRight = false;
             LastDirection = 1;
         }
     
-         if (x.keyCode === 40){ 
+         if (x.keyCode === 83){ 
             MoveDown = false; 
              LastDirection = 2;
         }
     
-         if (x.keyCode === 37)  {
+         if (x.keyCode === 65)  {
              MoveLeft = false;
              LastDirection = 3;
          }
@@ -141,14 +151,15 @@ $(function(){
 
     var canvas=document.getElementById("gamemap");
     var ctx=canvas.getContext("2d");
-    var img = document.getElementById("Test.png");
+
+    //var img = document.getElementById("Test.png");
     
     ctx.canvas.width  = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
     
-    var spawnRate=50;
+    var spawnRate=10;
 
-    var spawnRateOfDescent=0.50;
+   
 
     var lastSpawn=-1;
 
@@ -156,23 +167,28 @@ $(function(){
 
     var startTime=Date.now();
 
+    var pizza = new Image();
+    pizza.src = "images/pizza.jpg"
+
     animate();
 
     function spawnRandomObject(){
 
-        var t = "Test";
 
         var object={
 
-            type:t, 
+            
 
             x:Math.random()*(canvas.width-30)+15,
 
             y:Math.random() * (canvas.height) + 100 ,
+
+            image: pizza
         }
 
 
         objects.push(object);
+       
     }
 
 
@@ -189,22 +205,14 @@ $(function(){
 
         requestAnimationFrame(animate);
 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-
-
-        for(var i=0;i<objects.length;i++){
-            var object=objects[i];
-            ctx.beginPath();
-            ctx.arc(object.x,object.y,8,0,Math.PI*2);
-            ctx.closePath();
-            ctx.fillStyle=object.type;
-            ctx.fill();
+        for (var i = 0; i < objects.length; i++) {
+            var object = objects[i];
+            ctx.drawImage(object.image, object.x, object.y, 30, 30);
         }
-
+        
     }
-    ctx.drawImage(img, 10, 10);
 });
 }
 
