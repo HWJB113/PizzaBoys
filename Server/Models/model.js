@@ -1,37 +1,37 @@
-const sequelize = require('sequelize');
-const data_b = require('../Config/database.js')
+const Sequelize = require('sequelize');
+const data_b = require('../Config/database.js');
 
 
-var Player = sequelize.define('Player', {
+var Player = data_b.define('Player', {
     UserName: {
-        type: sequelize.STRING,
-        field: 'first_name' // Will result in an attribute that is firstName when user facing but first_name in the database
+        type: Sequelize.STRING,
+        primaryKey: true
     },
     Password: {
-        type: sequelize.STRING
+        type: Sequelize.STRING
     },
     CurrentScore: {
-        type: sequelize.INTEGER
+        type: Sequelize.INTEGER
     },
     HighScore: {
-        type: sequelize.INTEGER
+        type: Sequelize.INTEGER
     },
     Team: {
-        type: sequelize.INTEGER
+        type: Sequelize.INTEGER
     }
 }, {
     freezeTableName: true // Model tableName will be the same as the model name
 });
 
-var Team = sequelize.define('Team', {
+var Team = data_b.define('Team', {
     TeamNum: {
-        type: sequelize.INTEGER,
+        type: Sequelize.INTEGER,
     },
     TeamScore: {
-        type: sequelize.INTEGER
+        type: Sequelize.INTEGER
     },
     NumOfPlayers: {
-        type: sequelize.INTEGER
+        type: Sequelize.INTEGER
     }
 }, {
     freezeTableName: true // Model tableName will be the same as the model name

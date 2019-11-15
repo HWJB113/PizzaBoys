@@ -4,6 +4,7 @@
     "description": "WEB PROGRAMMING COURSEWORK - PIZZA BOYS",
     "main": "game.html",
     "scripts": {
+        "start": "node"
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -17,7 +18,6 @@
     },
     "homepage": "https://github.com/hwljs11/PizzaBoys#readme",
     "devDependencies": {
-        "jest": "^24.9.0",
         "nodemon": "^1.19.3"
     },
     "dependencies": {
@@ -25,7 +25,6 @@
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-handlebars": "^3.1.0",
-        "moment": "^2.24.0",
         "mysql2": "^1.7.0",
         "sequelize": "^5.21.1",
         "socket.io": "^2.3.0"
