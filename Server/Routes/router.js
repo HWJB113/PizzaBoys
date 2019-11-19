@@ -44,3 +44,26 @@ router.post('/signup', (req, res) => {
 
     res.send(req.body)
 })
+
+router.post("/login", (req, res) => {
+    console.log(req.body)
+    res.send(req.body)
+})
+
+router.post("/scoreupdate", (req, res) => {
+    const {Username, HighScore} = req.body;
+    Player.update(
+        {
+            HighScore
+        },
+        {
+            where:{
+                Username
+            }
+        }
+    )
+    .then(Player => res.send(Player))
+    .catch(err => res.status(500).send(err));
+})
+
+moudle.exports = router;
