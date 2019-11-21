@@ -106,27 +106,25 @@ $(function(){
         
         spider = spiderman;
             
-        if(MoveUp === true){
+        if(MoveUp === true && (spider.y - 5) > 20){
             spider.y = (spider.y - 5);
          
                 window.scrollBy(0,-5);
             }
         
-        if (MoveRight === true) {
-            if(spider.x > canvas.width){
-                spider.x = (spider.x)-5}
-            else{
+        if (MoveRight === true && (spider.x + 5) < 3000){
                 spider.x = (spider.x + 5);
                 window.scrollBy(5,0);}
+        else if(MoveRight === true && (spider.x + 5) < 3420) {
+            spider.x = (spider.x + 5);
         }
         
-        if (MoveDown === true){
+        if (MoveDown === true && (spider.y + 5) < 3420){
             spider.y = (spider.y + 5)
-            
-                window.scrollBy(0,5);
+            window.scrollBy(0,5);
         }
         
-        if (MoveLeft === true){
+        if (MoveLeft === true && (spider.x - 5) > 20){
             spider.x = (spider.x - 5);
                 window.scrollBy(-5,0);
         }
@@ -222,7 +220,7 @@ $(function(){
                     objects.splice(i, 1)
 
                 }
-            
+               
         }
         
     }
