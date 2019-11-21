@@ -31,6 +31,8 @@ function BeginMovement(x) {
     if (x.keyCode === 87) { 
         MoveUp = true;
         NewDirection = 0;
+		if(ycoord < window.innerHeight * 0.3){
+		window.scrollBy(0,-10);}
         
     }
 
@@ -46,13 +48,16 @@ function BeginMovement(x) {
     if (x.keyCode === 83)  {
         MoveDown = true;
         NewDirection = 2;
+		if(ycoord > window.innerHeight * 0.7){
+		window.scrollBy(0,10);}
 
     }
 
     if (x.keyCode === 65)  {
         MoveLeft = true;
         NewDirection = 3;
-    
+		if(xcoord < window.innerWidth * 0.3){
+		window.scrollBy(-10,0);}
 
 
     }
@@ -70,26 +75,26 @@ function BeginMovement(x) {
   if (x.keyCode === 65 && x.keyCode === 39)  {
     MoveDownRight = false;
     LastDirection = 4;
-}
+	}
     if (x.keyCode === 87) { 
          MoveUp = false;
          LastDirection = 0;
     }
 
-        if (x.keyCode === 68)  {
-            MoveRight = false;
-            LastDirection = 1;
-        }
+    if (x.keyCode === 68)  {
+        MoveRight = false;
+        LastDirection = 1;
+    }
     
-         if (x.keyCode === 83){ 
-            MoveDown = false; 
-             LastDirection = 2;
-        }
+    if (x.keyCode === 83){ 
+    MoveDown = false; 
+        LastDirection = 2;
+}
     
-         if (x.keyCode === 65)  {
-             MoveLeft = false;
-             LastDirection = 3;
-         }
+    if (x.keyCode === 65)  {
+        MoveLeft = false;
+        LastDirection = 3;
+    }
 
     
     }
