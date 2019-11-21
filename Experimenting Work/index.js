@@ -12,11 +12,11 @@ $(function(){
     var objects=[];
 
     var pizza = new Image();
-    pizza.src = "images/pizza.png"
+    pizza.src = "Images/pizza.png"
 
     var spiderman;
     var spiderimg = new Image();
-    spiderimg.src = "images/spiderR.gif"
+    spiderimg.src = "Images/spiderR.gif"
 
     var MoveUp = false;
     var MoveDownRight = false;
@@ -137,23 +137,23 @@ $(function(){
 
         if (NewDirection !== LastDirection ){
             if (NewDirection === 0){
-                spiderimg.src="images/spiderU.gif"
+                spiderimg.src="Images/spiderU.gif"
                 LastDirection = NewDirection;
             }
             if (NewDirection === 1){
-                spiderimg.src="images/spiderR.gif"
+                spiderimg.src="Images/spiderR.gif"
                 LastDirection = NewDirection;
             }
             if (NewDirection === 2){
-                spiderimg.src="images/spiderD.gif"
+                spiderimg.src="Images/spiderD.gif"
                 LastDirection = NewDirection;
             }
             if (NewDirection === 3){
-                spiderimg.src="images/spiderL.gif"
+                spiderimg.src="Images/spiderL.gif"
                 LastDirection = NewDirection;
             }
             if (NewDirection === 4){
-                spiderimg.src="images/spiderRD.gif"
+                spiderimg.src="Images/spiderRD.gif"
                 LastDirection = NewDirection;
             }
             }
