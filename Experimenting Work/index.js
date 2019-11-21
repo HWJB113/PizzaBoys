@@ -2,8 +2,8 @@ $(function(){
     var canvas=document.getElementById("canvas");
     var ctx=canvas.getContext("2d");
     
-    ctx.canvas.width  = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
+    ctx.canvas.width  = 3500;
+    ctx.canvas.height = 3500;
     
     var spawnRate=1000;
 
@@ -42,11 +42,11 @@ $(function(){
 
     function BeginMovement(x) {
         music.play();
-        if (x.keyCode === 65 && x.keyCode === 39)  {
-          MoveDownRight = true;
-          NewDirection = 4;
-      
-      }
+        spider = spiderman;
+
+       
+
+
         if (x.keyCode === 87) { 
               MoveUp = true;
               NewDirection = 0;
@@ -56,8 +56,7 @@ $(function(){
         if (x.keyCode === 68)  {
             MoveRight = true;
             NewDirection = 1;
-            if(xcoord > window.innerWidth * 0.7){
-            window.scrollBy(10,0);}
+    
             
         }
       
@@ -80,10 +79,6 @@ $(function(){
 
     function releaseKey(x) {
 
-        if (x.keyCode === 65 && x.keyCode === 39)  {
-            MoveDownRight = false;
-            LastDirection = 4;
-        }
         if (x.keyCode === 87) { 
             MoveUp = false;
             LastDirection = 0;
@@ -113,18 +108,27 @@ $(function(){
             
         if(MoveUp === true){
             spider.y = (spider.y - 5);
-        }
+         
+                window.scrollBy(0,-5);
+            }
         
         if (MoveRight === true) {
-            spider.x = (spider.x + 5);
+            if(spider.x > canvas.width){
+                spider.x = (spider.x)-5}
+            else{
+                spider.x = (spider.x + 5);
+                window.scrollBy(5,0);}
         }
         
         if (MoveDown === true){
             spider.y = (spider.y + 5)
+            
+                window.scrollBy(0,5);
         }
         
         if (MoveLeft === true){
             spider.x = (spider.x - 5);
+                window.scrollBy(-5,0);
         }
                 
         window.requestAnimationFrame(Movementloop)
@@ -152,10 +156,6 @@ $(function(){
                 spiderimg.src="Images/spiderL.gif"
                 LastDirection = NewDirection;
             }
-            if (NewDirection === 4){
-                spiderimg.src="Images/spiderRD.gif"
-                LastDirection = NewDirection;
-            }
             }
         }
         
@@ -181,9 +181,9 @@ $(function(){
     }
     function makeSpider(){
         var spider={
-            x:50,
+            x:600,
       
-            y:50 ,
+            y:450 ,
       
             width: 75,
             height: 75,
