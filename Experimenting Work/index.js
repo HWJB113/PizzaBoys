@@ -35,10 +35,24 @@ $(function(){
         music.play();
     }
 
+    assignTeam();
     makeSpider();
     animate();
 
     document.addEventListener('keydown', BeginMovement)
+
+    var team_ps_score = 0;
+    var team_fj_score = 0;
+    document.getElementById('ps_score').innerHTML = "" + team_ps_score;
+    document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+
+    var ps_team = [];
+    var fj_team = [];
+
+    function assignTeam(); {
+        team = 1;
+    }
+
 
     function BeginMovement(x) {
         music.play();
@@ -188,7 +202,9 @@ $(function(){
             width: 75,
             height: 75,
       
-            image: spiderimg
+            image: spiderimg,
+
+            team: 1
       
             }
       
@@ -220,6 +236,14 @@ $(function(){
                 spider.y + spider.height > object.y){
                     ctx.clearRect(object.x, object.y, object.width, object.height)
                     objects.splice(i, 1)
+                    if (spider.team == 1) {
+                        team_ps_score += 1;
+                        document.getElementById('ps_score').innerHTML = "" + team_ps_score;
+                    }
+                    else {
+                        team_fj_score += 1;
+                        document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+                    }
 
                 }
             
