@@ -35,7 +35,11 @@ $(function(){
         music.play();
     }
 
+    var ps_team = 0;
+    var fj_team = 0;
+
     assignTeam();
+    
     makeSpider();
     animate();
 
@@ -46,12 +50,26 @@ $(function(){
     document.getElementById('ps_score').innerHTML = "" + team_ps_score;
     document.getElementById('fj_score').innerHTML = "" + team_fj_score;
 
-    var ps_team = [];
-    var fj_team = [];
+    
+ 
+    function assignTeam() {
+        if(ps_team == fj_team){
+            assignedTeam = Math.floor(Math.random() * 2) + 1;
+            
+        }
+        if(fj_team > ps_team){
+            assignedTeam = 1;
+            ps_team += 1;
+         
+        }
+        if(ps_team > fj_team) {
+            assignedTeam = 2
+            fj_team += 1;
 
-    function assignTeam(); {
-        team = 1;
+        }
+        
     }
+    
 
 
     function BeginMovement(x) {
@@ -185,6 +203,7 @@ $(function(){
             y:Math.random() * (canvas.height) + 100 ,
 
             width: 30,
+
             height: 30,
 
             image: pizza
@@ -204,7 +223,7 @@ $(function(){
       
             image: spiderimg,
 
-            team: 1
+            team: assignedTeam,
       
             }
       
