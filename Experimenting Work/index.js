@@ -5,6 +5,7 @@ $(function(){
     ctx.canvas.width  = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
     
+    
     var spawnRate=1000;
 
     var lastSpawn=-1;
@@ -19,12 +20,14 @@ $(function(){
     spiderimg.src = "Images/spiderR.gif"
 
     var MoveUp = false;
-    var MoveDownRight = false;
     var MoveRight = false;
     var MoveDown = false;
+    var MoveLeft = false;
     var LastDirection;
     var NewDirection;
-    var MoveLeft = false;
+
+    
+    
 
     var music;
     music = new Audio("PizzaTime.ogg");
@@ -51,7 +54,6 @@ $(function(){
     document.getElementById('fj_score').innerHTML = "" + team_fj_score;
 
     
- 
     function assignTeam() {
         if(ps_team == fj_team){
             assignedTeam = Math.floor(Math.random() * 2) + 1;
@@ -71,25 +73,20 @@ $(function(){
     }
     
 
-
     function BeginMovement(x) {
         music.play();
-        if (x.keyCode === 65 && x.keyCode === 39)  {
-          MoveDownRight = true;
-          NewDirection = 4;
-      
-      }
         if (x.keyCode === 87) { 
               MoveUp = true;
-              NewDirection = 0;
-              
+              NewDirection = 0;             
         }
       
         if (x.keyCode === 68)  {
             MoveRight = true;
             NewDirection = 1;
+            
             if(xcoord > window.innerWidth * 0.7){
-            window.scrollBy(10,0);}
+                window.scrollBy(10,0);
+            }
             
         }
       
@@ -106,9 +103,9 @@ $(function(){
       
         ChangeDirection(NewDirection);
          
-        }
+    }
 
-        document.addEventListener('keyup', releaseKey)
+    document.addEventListener('keyup', releaseKey)
 
     function releaseKey(x) {
 
@@ -167,16 +164,19 @@ $(function(){
 
         spider = spiderman;
 
-        if (NewDirection !== LastDirection ){
+        if (NewDirection !== LastDirection){
+            if (NewDirection === 1){
+                
+                spiderimg.src="Images/spiderR.gif"
+                LastDirection = NewDirection;
+            }
             if (NewDirection === 0){
                 spiderimg.src="Images/spiderU.gif"
                 LastDirection = NewDirection;
             }
-            if (NewDirection === 1){
-                spiderimg.src="Images/spiderR.gif"
-                LastDirection = NewDirection;
-            }
+            
             if (NewDirection === 2){
+                
                 spiderimg.src="Images/spiderD.gif"
                 LastDirection = NewDirection;
             }
@@ -184,11 +184,7 @@ $(function(){
                 spiderimg.src="Images/spiderL.gif"
                 LastDirection = NewDirection;
             }
-            if (NewDirection === 4){
-                spiderimg.src="Images/spiderRD.gif"
-                LastDirection = NewDirection;
-            }
-            }
+        }
         }
         
         window.requestAnimationFrame(Movementloop)
