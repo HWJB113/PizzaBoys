@@ -4,6 +4,7 @@ $(function(){
     ctx.canvas.width  = 3500;
     ctx.canvas.height = 3500;
     
+    
     var spawnRate=1000;
 
     var lastSpawn=-1;
@@ -17,7 +18,7 @@ $(function(){
     var spiderimg = new Image();
     spiderimg.src = "Images/spiderR.gif"
 
-   
+
     
 
     var music;
@@ -29,12 +30,14 @@ $(function(){
         music.play();
     }
 
+    var ps_team = 0;
+    var fj_team = 0;
+
+    assignTeam();
+    
     makeSpider();
     animate();
-    movement(spiderman);
-   
-    
-   
+
 
 
     function spawnObject(){
@@ -46,6 +49,7 @@ $(function(){
             y:Math.random() * (canvas.height) + 100 ,
 
             width: 30,
+
             height: 30,
 
             image: pizza
@@ -63,8 +67,15 @@ $(function(){
             width: 75,
             height: 75,
       
+
+            image: spiderimg,
+
+            team: assignedTeam,
+      
+=======
             image: spiderimg
             
+
             }
             spiderman = spider;
             
@@ -96,6 +107,14 @@ $(function(){
                 spider.y + spider.height > object.y){
                     ctx.clearRect(object.x, object.y, object.width, object.height)
                     objects.splice(i, 1)
+                    if (spider.team == 1) {
+                        team_ps_score += 1;
+                        document.getElementById('ps_score').innerHTML = "" + team_ps_score;
+                    }
+                    else {
+                        team_fj_score += 1;
+                        document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+                    }
 
                 }
                

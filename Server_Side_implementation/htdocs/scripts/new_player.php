@@ -3,8 +3,8 @@
 
 // insert_employee.php script designed to insert the form input from
 // employee1.html (or employee.html)
-$playerID = $_POST['player_ID'] ;
-$password_entry = $_POST['password_new'] ;
+$playerID = $_POST['Username'] ;
+$password_entry = $_POST['Password'] ;
 
 // Convert the entered password to an encrypted password before querying the table
 // Consider what the significance of 'salt_string' is?
