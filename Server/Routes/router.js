@@ -4,15 +4,21 @@ const data_b = require('../Config/database');
 const Player = require('../Models/player_model');
 const Team = require('../Models/team_model');
 const crypt = require('bcryptjs');
+const bodyParser = require('body-parser');
+var app = express();
 
-router.get('/', (req, res) => {
-    Player.findAll()
-        .then(Player => {
-            res.send(Player)
-        })
-        .catch(err => res.status(500).send(err));
-})
+app.use(session({
+	secret: 'pizzatime',
+	resave: true,
+	saveUninitialized: true
+}));
 
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+app.get('/', function(req, res){
+	response.sendFile(path.join(__dirname + '/sign_in.html'));
+});
 
 function teamAssign() {
     team = Math.floor(Math.random() * 2) + 1;
@@ -20,8 +26,9 @@ function teamAssign() {
 
 }
 
-router.post('/signup', (req, res) => {
-    const { Username, Password } = req.body;
+app.post('/signup', (request, response) => {
+    var Username = request.body.Username
+	var Password = request.body.Password
 
     crypt.genSalt(7, function(error, salt) {
         crypt.hash(Password, salt, function(error, hashed) {
@@ -57,20 +64,43 @@ router.post('/signup', (req, res) => {
 
 
 
-router.post('/login', (req, res) => {
-    const { Username, Password } = req.body;
+app.post('/login', (request, response) => {
+    var Username = request.body.Username
+	var Password = request.body.Password
 
-    Player.findOne({ where: Username }).then(Player => {
-        var hashed = Player.Password;
-        crypt.compare(Password, hashed, function(err, hash) {
-            if (err || !hash) {
-                res.status(500).send("Internal error")
-            }
+	if(Username && Password) {
+		connection.query('SELECT * FROM Player WHERE Username = ? AND Password = ?', [Username, Password], function(error, results, fields) {
+			if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.username = Username;
+				response.redirect('/game');
+			} else {
+				response.send('Wrong username/password!');
+			}
+			response.end();
+		});
+	} else {
+		response.send('Please enter usename and password');
+		response.end();
+	}
+});
 
-            res.send(Player)
-        })
-    })
+app.get('/game', function(request, response) {
+	if (request.session.loggedin) {
+		re
+	}
 })
+  //  Player.findOne({ where: Username }).then(Player => {
+    //    var hashed = Player.Password;
+      //  crypt.compare(Password, hashed, function(err, hash) {
+       //     if (err || !hash) {
+         //       res.status(500).send("Internal error")
+           // }
+		   //
+           // res.send(Player)
+       // })
+   // })
+//})
 
 
 router.post("/scoreupdate", (req, res) => {
