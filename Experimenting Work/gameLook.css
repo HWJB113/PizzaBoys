@@ -42,3 +42,7 @@
 .score {
     font-size: 20px;
 }
+.canvaspos{
+    padding: 800px;
+    float: left;
+}

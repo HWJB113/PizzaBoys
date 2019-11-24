@@ -1,89 +1,42 @@
-const express = require('express');
-const router = express.Router();
-const data_b = require('../Config/database');
-const Player = require('../Models/player_model');
-const Team = require('../Models/team_model');
-const crypt = require('bcryptjs');
+//const express = require('express');
+//const router = express.Router();
+//const data_b = require('../Config/database');
+//const Player = require('../Models/player_model');
+//const Team = require('../Models/team_model');
+//const crypt = require('bcryptjs');
+//const bodyParser = require('body-parser');
+//var app = express();
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://PizzaBoys:PizzaPizza@pizzaboys-lbq8c.azure.mongodb.net/test?retryWrites=true&w=majority";
 
-router.get('/', (req, res) => {
-    Player.findAll()
-        .then(Player => {
-            res.send(Player)
-        })
-        .catch(err => res.status(500).send(err));
-})
+function sign_up(){
+    MongoClient.connect(uri, function(err, db){
+        if (err) throw err;
+        var dbo = db.db("PizzaBoys");
+        var username = document.getElementById("user").value;
+        var password = document.getElementById("pass").value;
 
-
-function teamAssign() {
-    team = Math.floor(Math.random() * 2) + 1;
-    return team;
+        var myobj = {Username: username , Password: password, CurrentScore: 0, HighScore: 0, Team: 1}
+        dbo.collection("Players").insertOne(myobj, function(err, res) {
+            if (err) throw err;
+            console.log("Player added");
+            db.close()
+        });
+    });
 
 }
 
-router.post('/signup', (req, res) => {
-    const { Username, Password } = req.body;
-
-    crypt.genSalt(7, function(error, salt) {
-        crypt.hash(Password, salt, function(error, hashed) {
-            if (error) {
-                res.status(500).send("Internal error")
-            }
-        })
-
-        Player.create({
-                Username,
-                Password: hashed,
-                CurrentScore: 0,
-                HighScore: 0,
-                Team: teamAssign()
-            })
-            .then(Player => res.send(Player))
-            .catch(err => res.status(500).send(err));
-
-        Team.update({
-                NumOfPlayers: +1
-            }, {
-                where: {
-                    Team
-                }
-            })
-            .then(Team => res.send(Team))
-            .catch(err => res.status(500).send(err));
-
-    })
-    alert("FUCKKKKKKKK");
-})
-
-
-
-
-router.post('/login', (req, res) => {
-    const { Username, Password } = req.body;
-
-    Player.findOne({ where: Username }).then(Player => {
-        var hashed = Player.Password;
-        crypt.compare(Password, hashed, function(err, hash) {
-            if (err || !hash) {
-                res.status(500).send("Internal error")
-            }
-
-            res.send(Player)
+function sign_in(){
+    MongoClient.connect(uri, function(err, db) {
+        if(err) throw err;
+        var User = document.getElementById("user").value;
+        var Pass = document.getElementById("pass").value;
+        var dbo = db.db("PizzaBoys");
+        var query = { Username: User, Password: Pass }
+        dbo.collection("Players").find(query).toArray(function(err,result) {
+            if(err) throw alert("Incorrect Username or Password!");
+            
+            db.close();
         })
     })
-})
-
-
-router.post("/scoreupdate", (req, res) => {
-    const { Username, HighScore } = req.body;
-    Player.update({
-            HighScore
-        }, {
-            where: {
-                Username
-            }
-        })
-        .then(Player => res.send(Player))
-        .catch(err => res.status(500).send(err));
-})
-
-moudle.exports = router;
+}
