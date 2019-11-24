@@ -13,8 +13,7 @@ $(function gamestart(){
     spiderimg.src = "Images/spiderR.gif"
     var pizza = new Image();
     pizza.src = "Images/pizza.png"
-    var homebaseS = new Image();
-    homebaseS.src = "Images/homeBase"
+  
 
     var MoveUp = false;
     var MoveRight = false;
@@ -32,9 +31,34 @@ $(function gamestart(){
         music.currentTime = 0;
         music.play();
     }
-
+   
+    assignTeam();
     makeSpider();
     animate();
+
+    var team_ps_score = 0;
+    var team_fj_score = 0;
+    document.getElementById('ps_score').innerHTML = "" + team_ps_score;
+    document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+
+    var ps_team = [];
+    var fj_team = [];
+
+    function assignTeam() {
+        if(ps_team == fj_team){
+            assignedTeam = Math.floor(Math.random() * 2) + 1;
+
+        }
+        if(fj_team > ps_team){
+            assignedTeam = 1;
+            ps_team += 1;
+         
+        }
+        if(ps_team > fj_team) {
+            assignedTeam = 2
+            fj_team += 1;
+        }
+    }
 
 
     document.addEventListener('keydown', BeginMovement)
@@ -108,12 +132,10 @@ $(function gamestart(){
                 window.scrollBy(0,-5);
             }
 
-        if (MoveRight === true && (spider.x + 5) < 3000){
+        if (MoveRight === true && (spider.x + 5) < 3420){
                 spider.x = (spider.x + 5);
                 window.scrollBy(5,0);}
-        else if(MoveRight === true && (spider.x + 5) < 3420) {
-            spider.x = (spider.x + 5);
-        }
+        
 
         if (MoveDown === true && (spider.y + 5) < 3420){
             spider.y = (spider.y + 5)
@@ -178,10 +200,14 @@ $(function gamestart(){
             width: 75,
             height: 75,
 
-            image: spiderimg}
+            image: spiderimg,
+            
+            team: assignedTeam,
+        }
             window.scrollTo(spidyX, spidyY + 300)
             spiderman = spider;}
 
+      
           //  function home(){
             //    var homebaseS={
                 //    x:0,
@@ -196,23 +222,7 @@ $(function gamestart(){
                     
            // }
 
-           function moveup() {
-            spider.y = (spider.y - 5);
-
-            window.scrollBy(0,-5);
-          }
-          
-          function movedown() {
-            myGamePiece.speedY += 1;
-          }
-          
-          function moveleft() {
-            myGamePiece.speedX -= 1;
-          }
-          
-          function moveright() {
-            myGamePiece.speedX += 1;
-          }
+      
 
     function animate(){
         var time=Date.now();
@@ -235,6 +245,15 @@ $(function gamestart(){
                 spider.y + spider.height > object.y){
                     ctx.clearRect(object.x, object.y, object.width, object.height)
                     objects.splice(i, 1)
+                    if (spider.team == 1) {
+                        team_ps_score += 1;
+                        document.getElementById('ps_score').innerHTML = "" + team_ps_score;
+                    }
+                    else {
+                        team_fj_score += 1;
+                        document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+                    }
+                    
                 }
                
         }
