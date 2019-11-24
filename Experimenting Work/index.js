@@ -32,33 +32,13 @@ $(function gamestart(){
         music.play();
     }
    
-    assignTeam();
+    
     makeSpider();
     animate();
 
-    var team_ps_score = 0;
-    var team_fj_score = 0;
-    document.getElementById('ps_score').innerHTML = "" + team_ps_score;
-    document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+   
 
-    var ps_team = [];
-    var fj_team = [];
-
-    function assignTeam() {
-        if(ps_team == fj_team){
-            assignedTeam = Math.floor(Math.random() * 2) + 1;
-
-        }
-        if(fj_team > ps_team){
-            assignedTeam = 1;
-            ps_team += 1;
-         
-        }
-        if(ps_team > fj_team) {
-            assignedTeam = 2
-            fj_team += 1;
-        }
-    }
+    
 
 
     document.addEventListener('keydown', BeginMovement)
@@ -202,7 +182,7 @@ $(function gamestart(){
 
             image: spiderimg,
             
-            team: assignedTeam,
+            
         }
             window.scrollTo(spidyX, spidyY + 300)
             spiderman = spider;}
@@ -245,14 +225,7 @@ $(function gamestart(){
                 spider.y + spider.height > object.y){
                     ctx.clearRect(object.x, object.y, object.width, object.height)
                     objects.splice(i, 1)
-                    if (spider.team == 1) {
-                        team_ps_score += 1;
-                        document.getElementById('ps_score').innerHTML = "" + team_ps_score;
-                    }
-                    else {
-                        team_fj_score += 1;
-                        document.getElementById('fj_score').innerHTML = "" + team_fj_score;
-                    }
+                  
                     
                 }
                
