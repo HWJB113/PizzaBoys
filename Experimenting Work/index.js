@@ -5,7 +5,7 @@ $(function gamestart() {
     ctx.canvas.width = 3500;
     ctx.canvas.height = 3500;
     window.scrollTo(600, 800)
-    var spawnRate = 1000;
+    var spawnRate = 500;
     var lastSpawn = -1;
     var objects = [];
 
@@ -15,6 +15,8 @@ $(function gamestart() {
 
     var pizza = new Image();
     pizza.src = "Images/pizza.png"
+
+   
 
     var MoveLeft = false;
     var MoveUp = false;
@@ -32,8 +34,11 @@ $(function gamestart() {
         music.play();
     }
 
+
     var ps_team = 0;
     var fj_team = 0;
+
+   
 
     assignTeam();
     makeSpider();
@@ -41,6 +46,8 @@ $(function gamestart() {
 
     document.addEventListener('keydown', BeginMovement)
 
+
+    
     var team_ps_score = 0;
     var team_fj_score = 0;
     document.getElementById('ps_score').innerHTML = "" + team_ps_score;
@@ -121,6 +128,18 @@ $(function gamestart() {
 
     function Movementloop() {
 
+        if (team_ps_score >= 60) {
+            team_ps_score = 0;
+            setInterval(gamestart(), 6000)
+            return alert("hey")
+            
+            
+        }
+        if(team_fj_score >= 60){
+            team_fj_score = 0;
+            setInterval(gamestart(), 6000)
+            return alert("hey")
+        }
         spider = spiderman;
 
         if (MoveUp === true && (spider.y - 5) > 20) {
@@ -200,11 +219,12 @@ $(function gamestart() {
             team: assignedTeam
 
         }
-
         window.scrollTo(spidyX, spidyY + 300)
         spiderman = spider;
     }
 
+    
+      
     function animate() {
         var time = Date.now();
 
@@ -216,11 +236,14 @@ $(function gamestart() {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         var spider = spiderman;
+        
+
 
         for (var i = 0; i < objects.length; i++) {
             var object = objects[i];
             ctx.drawImage(object.image, object.x, object.y, object.width, object.height);
             ctx.drawImage(spider.image, spider.x, spider.y, spider.height, spider.width);
+            
 
             if (spider.x < object.x + object.width &&
                 spider.x + spider.width > object.x &&
