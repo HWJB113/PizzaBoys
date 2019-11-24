@@ -1,5 +1,4 @@
-$(function Movement(objectP) {
-    this.objectP = objectP;
+
     var MoveUp = false;
     var MoveRight = false;
     var MoveDown = false;
@@ -126,4 +125,3 @@ $(function Movement(objectP) {
         }
         
         window.requestAnimationFrame(Movementloop)
-})
