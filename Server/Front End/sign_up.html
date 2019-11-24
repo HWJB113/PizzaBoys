@@ -1,34 +1,26 @@
 <html>
 <head> 
-    <title> Sign Up! </title>
-    <link rel="ICON" href="favicon.ico" type="image/ico" />
+<title> Sign Up! </title>
+<link rel="ICON" href="favicon.ico" type="image/ico" />
+<script type = "text/javascript" src="/home/cs2/jb113/PizzaBoys-2/Server/Routes/router.js"> </script>
 </head>
 
 <body>
-    <center>
-        <div>
-            <img src="banner.jpg">
-            <h2 style="width: 500px">This page is where you shall signup for New York's No. 1 Pizza Video Game 2019. Simply complete the form below! </h2>
-        </div>
-        <br><br><br>
-        <form>
-            Username:<br>
-            <input type="text" name="Username" placeholder="Tobey_Maguire"><br>
-            Password:<br>
-            <input type="text" name="Password" placeholder="Oh_Boy_Yeah"><br><br>
-            <input type="submit" value="Submit!">
-        </form>
-    </center>
+<center> <div><img src ="banner.jpg"><h2 style = "width: 500px" >This page is where you shall signup for New York's No. 1 Pizza
+                                    <br> Video Game 2019. Simply complete the form below! </h2> </div>
+         <br>
 
-    <div>
-        <h3>
-            <ul>
-                <li> <a href="home_page.html">Home</a> </li>
-                <li> <a href="sign_in.html">Sign In </a> </li>
-                <li> Tutorial/Sandbox </li>
-            </ul>
-        </h3>
-    </div>
+        <br>
+        <br>
+        <form onsubmit ="/home/cs2/jb113/PizzaBoys-2/Server/Routes/router.js" method = "GET">
+        First name:<br>
+        <input type="text" name="Username" placeholder="Tobey_Maguire"><br>
+        Last name:<br>
+        <input type="text" name="Password" placeholder="Spider-Man4Plzzzz"><br><br>
+        <button type="button" onClick="sign_up()">Sign up!</button>
+        </form>
+</center>
+
 </body>
 
 </html>
