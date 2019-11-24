@@ -3,7 +3,6 @@
 <head>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="index.js"></script>
-<script type="text/javascript" src="Movement.js"></script>
 <link rel="stylesheet" type="text/css" href="gameLook.css" />
 
 <style>
@@ -12,32 +11,40 @@
         border:1px solid indianred}
 </style>
 
+
+  
+</head>
 <body height: 3500px width: 3500px>
-  <div class="Pizza_Shack">
-        <div class="box">
-            <p>Pizza Shack</p>
-            <div class="score">
-                <p>20</p>
-            </div>
+<div class="Pizza_Shack">
+    <div class="box">
+        <p>Pizza Shack</p>
+        <div class="score">
+            <p>20</p>
+        </div>
+    </div>
+</div>
+
+<div class="Father_Johns">
+    <div class="box">
+        <p>Father John's</p>
+        <div class="score">
+            <p>20</p>
         </div>
     </div>
 
-    <div class="Father_Johns">
-        <div class="box">
-            <p>Father John's</p>
-            <div class="score">
-                <p>20</p>
-            </div>
-        </div>
-    </div>
- <script>movement();</script>
-</head>
+    
+    <button onclick=moveup()>UP</button>
+<button onclick="movedown()">DOWN</button>
+<button onclick="moveleft()">LEFT</button>
+<button onclick="moveright()">RIGHT</button>
+</div>
+
 <body>
 
 
 <div class = "canvaspos">
     <canvas id="canvas" width=3500 height=3500></canvas>
 <div>
-
+</body>
 </body>
 </html>    
