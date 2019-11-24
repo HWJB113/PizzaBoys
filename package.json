@@ -5,6 +5,7 @@
     "main": "game.html",
     "scripts": {
         "start": "node",
+        "build-js": "browserify Server/Routes/router.js -o Server/Routes/userfuncs.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -21,13 +22,12 @@
         "nodemon": "^1.19.3"
     },
     "dependencies": {
-        "body-parser": "^1.19.0",
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "express-handlebars": "^3.1.0",
         "mongodb": "^3.3.4",
-        "mysql2": "^1.7.0",
-        "sequelize": "^5.21.1",
-        "socket.io": "^2.3.0"
+        "socket.io": "^2.3.0",
+        "browserify": "^16.5.0",
+        "mongodb-client-encryption": "^0.3.1",
+        "express": "^4.17.1",
+        "body-parser": "^1.19.0",
+        "mongoose": "^5.7.12"
     }
 }

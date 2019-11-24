@@ -8,13 +8,15 @@
 //var app = express();
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://PizzaBoys:PizzaPizza@pizzaboys-lbq8c.azure.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
 
 function sign_up(){
     MongoClient.connect(uri, function(err, db){
         if (err) throw err;
         var dbo = db.db("PizzaBoys");
-        var myobj = {Username: "Tobey_Maguire" , Password: "Tobey", CurrentScore: 0, HighScore: 0, Team: 1}
+        var username = document.getElementById("user").value;
+        var password = document.getElementById("pass").value;
+
+        var myobj = {Username: username , Password: password, CurrentScore: 0, HighScore: 0, Team: 1}
         dbo.collection("Players").insertOne(myobj, function(err, res) {
             if (err) throw err;
             console.log("Player added");
@@ -38,4 +40,3 @@ function sign_in(){
         })
     })
 }
-
