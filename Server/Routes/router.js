@@ -7,6 +7,29 @@ const crypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 var app = express();
 
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://PizzaBoys:PizzaPizza@pizzaboys-lbq8c.azure.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  db.mycol.insert({
+   _id: ObjectId(7df78ad8902c),
+   Username: 'MongoDB Overview', 
+   Pasword: 'MongoDB is no sql database',
+   CurrentScore: 600,
+   HighScore: 1000
+   Team: 2
+})
+  client.close();
+});
+
+
+
+
+
 app.use(session({
 	secret: 'pizzatime',
 	resave: true,
