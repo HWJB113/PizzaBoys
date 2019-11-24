@@ -5,8 +5,11 @@
     "main": "game.html",
     "scripts": {
         "start": "node",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --progress --colors",
+        "dev": "nodemon client/server.js --exec babel-node"
+
         "build-js": "browserify Server/Routes/router.js -o Server/Routes/userfuncs.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
@@ -19,7 +22,15 @@
     },
     "homepage": "https://github.com/hwljs11/PizzaBoys#readme",
     "devDependencies": {
-        "nodemon": "^1.19.3"
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.6",
+        "babel-preset-env": "^1.7.0",
+        "babel-register": "^6.26.0",
+        "html-webpack-plugin": "^3.2.0",
+        "nodemon": "^2.0.1",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "webpack": "^4.41.2"
     },
     "dependencies": {
         "mongodb": "^3.3.4",
@@ -27,7 +38,11 @@
         "browserify": "^16.5.0",
         "mongodb-client-encryption": "^0.3.1",
         "express": "^4.17.1",
+
+        "express-handlebars": "^3.1.0",
+
         "body-parser": "^1.19.0",
         "mongoose": "^5.7.12"
+
     }
 }
