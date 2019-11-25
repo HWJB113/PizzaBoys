@@ -31,13 +31,14 @@ with the player in the game*/
     left: 2%;
     bottom: 10%;
     position: fixed;
-    text-align: center;
-    height: 100;
-    width: 100;}
+    text-align: center;}
     /*this will create some padding for the canvas this padding is actually very important as it allows the scrolling to work properly and it will set a background colour */
 .CanvasPos{
     padding: 800px;
     float: left;
     background: rgb(126, 42, 12);}
 
-
+.Btn{
+    height: 100px;
+    width: 100px;
+}

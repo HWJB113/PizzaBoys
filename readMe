@@ -50,14 +50,17 @@ Wednesdays: 1pm - whenever
 Thursdays: 12pm - 2pm
 Anyday on discord.
 
-  Weekly Plan:
+  Weekly Plan/Updates:
 Week 1 (week 3 semester): GitHub set up, readMe created, asset hunting, figuring out design and main features, wireframe design of game.
 
 Week 2: making a start on getting base html, css, javascript etc. set up, aim to have logins complete, database set up and ready to use.
 
+
+Week 3: Aim to start making a base version of the game itself most likely singleplayer to begin with to make sure that the general concepts for the game work.
+=======
 Week 3: Aim to start making a base version of the game itself most likely singleplayer to begin with to make sure that the general concepts for the game work
 
 To run the game navigate to the game folder and use 'node server.js' to host the game on localhost:5000.
 To run the game from the sandbox/tutorial mode you need to change the link to the absolute location on your machine
 
-.
+
