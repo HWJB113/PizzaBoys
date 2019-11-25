@@ -20,15 +20,13 @@ $(function GameStart() {
     //creates a new image that will be the player
     var SpiderImg = new Image();
     //imports the image to be used for the player
-    SpiderImg.src = "../Media/spiderR.gif"
+    SpiderImg.src = "Images/spiderR.gif"
     //creates an array to hold all of the spawned pizzas
     var Objects = [];
     //creates a new object that will be spawned for the pizzas
     var Pizza = new Image();
     //imports the image of the pizza
-    Pizza.src = "../Media/pizza.png"
-
-    var socket = io(); //defining socket so the plugin can be used
+    Pizza.src = "Images/pizza.png"
     
     //this creates all the movement control variables
     var MoveLeft = false;
@@ -42,7 +40,7 @@ $(function GameStart() {
     //a new variable is defined that will hold the music
     var Music;
     //the variable is set equal to the music that is being held
-    Music = new Audio("../Media/PizzaTime.ogg");
+    Music = new Audio("PizzaTime.ogg");
     //this event listener is designed to start whenever the music ends so that it will keep going infinitly the music is intially started in the movement
     Music.addEventListener('ended', LoopMusic)
     //this function serves to run a movement loop
@@ -223,31 +221,26 @@ $(function GameStart() {
         if (NewDirection !== LastDirection){
             // if the new direction is 0 it will use the spiderman up gif 
             if (NewDirection === 0) {
-                SpiderImg.src = "../Media/spiderU.gif"
+                SpiderImg.src = "Images/spiderU.gif"
                 //and set the directions to be equal
                 LastDirection = NewDirection;}
             // if the new direction is 1 it will use the spiderman right gif 
             if (NewDirection === 1){
-                SpiderImg.src = "../Media/spiderR.gif"
+                SpiderImg.src = "Images/spiderR.gif"
                 //and set the directions to be equal
                 LastDirection = NewDirection;}
             // if the new direction is 2 it will use the spiderman down gif 
             if (NewDirection === 2) {
-                SpiderImg.src = "../Media/spiderD.gif"
+                SpiderImg.src = "Images/spiderD.gif"
                 //and set the directions to be equal
                 LastDirection = NewDirection;}
             // if the new direction is 3 it will use the spiderman left gif 
             if (NewDirection === 3) {
-                SpiderImg.src = "../Media/spiderL.gif"
+                SpiderImg.src = "Images/spiderL.gif"
                 //and set the directions to be equal
                 LastDirection = NewDirection;}}}
     
     window.requestAnimationFrame(Movementloop)
-
-    socket.emit('new player'); // socket usage so that server side implementation can be added
-        setInterval(function() {
-            socket.emit('movement', movement);
-        }, 1000 / 60);
 
     //this function is incharge of making sure the pizza objects are spawned randomly
     function SpawnObject(){

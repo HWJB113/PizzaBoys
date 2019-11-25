@@ -1,63 +1,36 @@
-.body {
-    background-color: coral;
-  
-}
-
-.box {
+.Box{
     border-radius: 50%;
     border: 5px solid #d90d0d;
-    
     width: 135px;
     padding: 10px;
-    font-size: 25px;
-}
+    font-size: 25px;}
 
-.Pizza_Shack {
+.PizzaShack{
     border-radius: 50%;
-    
-
     background-color: #edab02 ;
     border: 7px solid brown;
-    
     right: 2%;
-     
-   
     position: fixed;
-    text-align: center;
-}
+    text-align: center;}
 
-.Father_Johns {
+.FatherJohns{
     border-radius: 50%;
-    
-
     background-color: #edab02 ;
     border: 7px solid brown;
-    
     left: 2%;
-    
     position: fixed;
-    text-align: center;
-}
-.Mobile_Move{
+    text-align: center;}
+
+.MobileMove{
     left: 2%;
     bottom: 10%;
     position: fixed;
-    text-align: center;
+    text-align: center;}
     
-    
-}
-
-.Stop{
-    color: red;
-}
-
-.score {
-    font-size: 20px;
-}
-.canvaspos{
+.CanvasPos{
     padding: 800px;
     float: left;
-    background: coral;
-    
-}
+    background: rgb(126, 42, 12);}
 
+.Stop{
+    background-color: green;}

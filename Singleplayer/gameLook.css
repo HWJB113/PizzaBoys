@@ -1,0 +1,43 @@
+/* this block of css is for the box that the team scores will be held in both of the team scores are inside this div so they
+will both recieve the this css applied to them  it has border radius which will make it a circle that is around it, it will have a red border
+and the rest are just standard values that are set  */
+.Box{
+
+    border-radius: 50%;
+    border: 5px solid #d90d0d;
+    width: 135px;
+    padding: 10px;
+    font-size: 25px;}
+/*this block of css will be applied to the inner section of the pizza shack team this block of code will again have the circle 
+and will have a different background colour the point of it is to just make it look like a pizza it will be placed 2 % out from the right of the screen */
+.PizzaShack{
+    border-radius: 50%;
+    background-color: #edab02 ;
+    border: 7px solid brown;
+    right: 2%;
+    position: fixed;
+    text-align: center;}
+/*the description for this block of code is much the same as the one above except here it is on the left*/
+.FatherJohns{
+    border-radius: 50%;
+    background-color: #edab02 ;
+    border: 7px solid brown;
+    left: 2%;
+    position: fixed;
+    text-align: center;}
+/*this bit of css is for the movement controls that ould be used on the mobilephone version of the game it will keep them down at the bottom right and they will scroll
+with the player in the game*/
+.MobileMove{
+    left: 2%;
+    bottom: 10%;
+    position: fixed;
+    text-align: center;
+    height: 100;
+    width: 100;}
+    /*this will create some padding for the canvas this padding is actually very important as it allows the scrolling to work properly and it will set a background colour */
+.CanvasPos{
+    padding: 800px;
+    float: left;
+    background: rgb(126, 42, 12);}
+
+
