@@ -5,19 +5,19 @@
     "main": "game.html",
     "scripts": {
         "start": "node",
-        "build-js": "browserify Server/Routes/router.js -o Server/Routes/userfuncs.js",
+        "build-js": "browserify Server/Routes/router.js -o Server/Front End/hope.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/hwljs11/PizzaBoys.git"
+        "url": "git+https://github.com/HWJB113/PizzaBoys.git"
     },
     "author": "Jake Barr, Nathanael Brown, Joe Morwood, Liam Sneddon",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/hwljs11/PizzaBoys/issues"
+        "url": "https://github.com/HWJB113/PizzaBoys/issues"
     },
-    "homepage": "https://github.com/hwljs11/PizzaBoys#readme",
+    "homepage": "https://github.com/HWJB113/PizzaBoys#readme",
     "devDependencies": {
         "nodemon": "^1.19.3"
     },
@@ -27,6 +27,7 @@
         "browserify": "^16.5.0",
         "mongodb-client-encryption": "^0.3.1",
         "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
         "body-parser": "^1.19.0",
         "mongoose": "^5.7.12"
     }
