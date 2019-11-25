@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Login_Credentials",
+    "\\Server",
+    "\\Server\\Config",
+    "\\Server\\Front End",
+    "\\Server\\Models",
+    "\\Server\\Routes",
     "\\Server_Side_implementation",
     "\\Server_Side_implementation\\htdocs",
     "\\Server_Side_implementation\\htdocs\\scripts"
   ],
-  "SelectedNode": "\\Server_Side_implementation\\htdocs\\scripts\\new_customer.php",
+  "SelectedNode": "\\Server\\Routes\\router.js",
   "PreviewInSolutionExplorer": false
 }

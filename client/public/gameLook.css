@@ -1,5 +1,5 @@
 .body {
-    background-color: coral;
+    background-color: grey;
   
 }
 
@@ -38,26 +38,7 @@
     position: fixed;
     text-align: center;
 }
-.Mobile_Move{
-    left: 2%;
-    bottom: 10%;
-    position: fixed;
-    text-align: center;
-    
-    
-}
-
-.Stop{
-    color: red;
-}
 
 .score {
     font-size: 20px;
 }
-.canvaspos{
-    padding: 800px;
-    float: left;
-    background: coral;
-    
-}
-
