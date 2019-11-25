@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <head>
+    <!--this will import the necessary javascript and css files-->
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="gameLook.css" />
 </head>
-
+<!--this will create the first body that will hold the scores and the button controlls-->
 <body height: 3500px width: 3500px>
-
+<!--this part will create the divs that will hold the scores for each team-->
     <div class="PizzaShack">
         <div class="Box">
             <p>Pizza Shack</p>
@@ -25,17 +26,17 @@
             </div>
         </div>
     </div>
-
+<!--this part of the html will create the buttons which will allow movmenet on a mobile-->
     <div class="MobileMove">
-        <button id = "MoveUpM">Up</button> <br><br>
+        <button id = "MoveUpM" style="height: 100px; width: 100px;">Up</button> <br><br>
         <button id = "MoveLeftM" >Left</button>
         <button id = "Stop" >Stop</button>
         <button id = "MoveRightM" >Right</button> <br><br>
         <button id = "MoveDownM" >Down</button>
     </div>
-
+<!--this will create a second body which allows the the other body to move independently of the canvas-->
 <body>
-
+<!--this creates the canvas that the javascript will use to make the game-->
     <div class="CanvasPos">
         <canvas id="Canvas"></canvas>
     <div>
