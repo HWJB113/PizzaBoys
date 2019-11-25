@@ -6,7 +6,7 @@ var path = require('path');
 var socketIO = require('socket.io');var app = express();
 var server = http.Server(app);
 var io = socketIO(server);app.set('port', 5000);
-app.use('/static', express.static(__dirname + '/static'));// Routing
+app.use('/public', express.static(__dirname + '/public'));// Routing
 app.use(express.static('public'));
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'map.html'));
