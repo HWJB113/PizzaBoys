@@ -11,11 +11,12 @@
             <h2 style="width: 500px">This page is where you can sign in and play Pizza Boys right now! Please login in using your details below. </h2>
         </div>
         <br><br><br>
-        <form id = "form">
+        <form action = "/login" method="post">
+        <!used the /login function set up in app.js file, this unfortunately doesn't work and will send you back to the homepage>
             Username:<br>
             <input type="text" id="user" name="Username" placeholder="Tobey_Maguire"><br>
             Password:<br>
-            <input type="text" id="pass" name="Password" placeholder="Oh_Boy_Yeah"><br><br>
+            <input type="password" id="pass" name="Password" placeholder="Oh_Boy_Yeah"><br><br>
             <input type="submit" value="Submit!">
         </form>
 

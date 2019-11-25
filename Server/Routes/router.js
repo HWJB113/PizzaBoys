@@ -9,14 +9,14 @@ var app = express();
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://PizzaBoys:PizzaPizza@pizzaboys-lbq8c.azure.mongodb.net/test?retryWrites=true&w=majority";
 
-app.post("/signup", (req, res) =>{
-    MongoClient.connect(uri, function(err, db){
+app.post("/signup", (req, res) => {
+    MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("PizzaBoys");
         var username = res.body.user;
         var password = res.body.pass;
 
-        var myobj = {Username: username , Password: password, CurrentScore: 0, HighScore: 0, Team: 1}
+        var myobj = { Username: username, Password: password, CurrentScore: 0, HighScore: 0, Team: 1 }
         dbo.collection("Players").insertOne(myobj, function(err, res) {
             if (err) throw err;
             console.log("Player added");
@@ -26,16 +26,16 @@ app.post("/signup", (req, res) =>{
 
 })
 
-function sign_in(){
+function sign_in() {
     MongoClient.connect(uri, function(err, db) {
-        if(err) throw err;
+        if (err) throw err;
         var User = document.getElementById("user").value;
         var Pass = document.getElementById("pass").value;
         var dbo = db.db("PizzaBoys");
         var query = { Username: User, Password: Pass }
-        dbo.collection("Players").find(query).toArray(function(err,result) {
-            if(err) throw alert("Incorrect Username or Password!");
-            
+        dbo.collection("Players").find(query).toArray(function(err, result) {
+            if (err) throw alert("Incorrect Username or Password!");
+
             db.close();
         })
     })
