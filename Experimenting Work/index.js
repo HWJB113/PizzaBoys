@@ -1,6 +1,8 @@
 $(function gamestart() {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.canvas.width = 3500;
     ctx.canvas.height = 3500;
@@ -46,28 +48,36 @@ $(function gamestart() {
 
     document.addEventListener('keydown', BeginMovement)
 
-    moveup.onclick = function mobilemoveU(){
+    MoveUpM.onclick = function mobilemoveU(){
         MoveUp = true;
         MoveLeft = false;
         MoveRight = false;
         MoveDown = false;
     };
 
-    moveleft.onclick = function mobilemoveL(){
+    MoveLeftM.onclick = function mobilemoveL(){
         MoveUp = false;
         MoveLeft = true;
         MoveRight = false;
         MoveDown = false;
     };
 
-    moveright.onclick = function mobilemoveR(){
+    
+    Stop.onclick = function StopMovement(){
+        MoveUp = false;
+        MoveLeft = false;
+        MoveRight = false;
+        MoveDown = false;
+    };
+
+    MoveRightM.onclick = function mobilemoveR(){
         MoveUp = false;
         MoveLeft = false;
         MoveRight = true;
         MoveDown = false;
     };
 
-    movedown.onclick = function mobilemoveD(){
+    MoveDownM.onclick = function mobilemoveD(){
         MoveUp = false;
         MoveLeft = false;
         MoveRight = false;
@@ -265,13 +275,15 @@ $(function gamestart() {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         var spider = spiderman;
-        
+        ctx.fillStyle = "blue";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
         for (var i = 0; i < objects.length; i++) {
             var object = objects[i];
             ctx.drawImage(object.image, object.x, object.y, object.width, object.height);
             ctx.drawImage(spider.image, spider.x, spider.y, spider.height, spider.width);
+            
             
 
             if (spider.x < object.x + object.width &&
