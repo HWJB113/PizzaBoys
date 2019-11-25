@@ -2,7 +2,7 @@
 <head> 
 <title> Sign Up! </title>
 <link rel="ICON" href="favicon.ico" type="image/ico" />
-<script type = "text/javascript" src="userfuncs.js"> </script>
+<script type = "text/javascript" src="/home/cs2/jb113/PizzaBoys-2/Server/Routes/userfuncs.js"> </script>
 </head>
 
 <body>
@@ -13,12 +13,12 @@
 
         <br>
         <br>
-        <form>
+        <form action ="/signup" method = "POST">
         Username:<br>
         <input type="text" id="user" name="Username" placeholder="Tobey_Maguire"><br>
         Password:<br>
         <input type="text" id="pass" name="Password" placeholder="Spider-Man4Plzzzz"><br><br>
-        <button type="button" onclick="sign_up()">Sign up!</button>
+        <input type= "submit" value ="Sign Up"> 
         </form>
 </center>
 
