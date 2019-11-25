@@ -1,0 +1,19 @@
+
+#description{
+    margin: auto;
+    text-align: center;
+    width: 500;
+    background-image: linear-gradient(yellow, red);
+    color: 
+}
+#body{
+    background-image: linear-gradient(red, yellow);
+}
+
+#links{
+    border-style: dotted; 
+    border-width: 20;
+    border-color: red yellow orange;
+    background-color: papayawhip;
+    width: 200;
+}

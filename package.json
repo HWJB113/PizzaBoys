@@ -4,7 +4,8 @@
   "description": "WEB PROGRAMMING COURSEWORK - PIZZA BOYS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "browserify Server/Routes/router.js -o Server/Routes/userfuncs.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,13 @@
     "nodemon": "^2.0.1",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^4.41.2"
+  },
+  "dependencies": {
+    "mongodb": "^3.3.4",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "body-parser": "^1.19.0",
+    "mongodb-client-encryption": "^0.3.1",
+    "browserify": "^16.5.0"
   }
 }
