@@ -2,7 +2,12 @@
 <head> 
 <title> Sign Up! </title>
 <link rel="ICON" href="favicon.ico" type="image/ico" />
-<script type = "text/javascript" src="/home/cs2/jb113/PizzaBoys-2/Server/Routes/userfuncs.js"> </script>
+<link rel="stylesheet" 
+href= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity= 
+"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous">   
 </head>
 
 <body>
@@ -13,11 +18,12 @@
 
         <br>
         <br>
-        <form action ="/signup" method = "POST">
+        <form action ="/signup" method = "post">
+        <!uses the signup function set up in the app.js file, this works and adds you to our database with a hashed password>
         Username:<br>
-        <input type="text" id="user" name="Username" placeholder="Tobey_Maguire"><br>
+        <input type="text" id="user" name="user" placeholder="Tobey_Maguire"><br>
         Password:<br>
-        <input type="text" id="pass" name="Password" placeholder="Spider-Man4Plzzzz"><br><br>
+        <input type="Password" id="pass" name="pass" placeholder="Spider-Man4Plzzzz"><br><br>
         <input type= "submit" value ="Sign Up"> 
         </form>
 </center>
