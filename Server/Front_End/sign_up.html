@@ -1,0 +1,37 @@
+<html>
+<head> 
+<title> Sign Up! </title>
+<link rel="ICON" href="favicon.ico" type="image/ico" />
+<link rel = "stylesheet" href = "homepage.css" type= "text/css"/>
+<script type = "text/javascript" src="/home/cs2/jb113/PizzaBoys-2/Server/Routes/userfuncs.js"> </script>
+</head>
+
+<body id = "body">
+        <div  id = "description">
+                <img src ="banner.jpg" width = "500px">
+                <h2>This page is where you shall signup for New York's No. 1 Pizza
+                <br> Video Game 2019. Simply complete the form below! </h2> 
+        </div>
+        <br><br><br>
+        <form id = "form" action ="/signup" method = "POST">
+           <!uses the signup function set up in the app.js file, this works and adds you to our database with a hashed password>
+                Username:<br>
+                <input type="text" id="user" name="Username" placeholder="Tobey_Maguire"><br>
+                Password:<br>
+                <input type="text" id="pass" name="Password" placeholder="Spider-Man4Plzzzz"><br><br>
+                <input type= "submit" value ="Sign Up"> 
+
+        </form>
+        <div id = "links">
+                <h3>
+                        <ul>
+                                <li> <a href="home_page.html">Home</a> </li>
+                                <li> <a href="sign_in.html">Sign In </a> </li>
+                                <li> <a href = "C:\Users\jb113\PizzaBoys\Singleplayer\GameMap.html">Tutorial/Sandbox </a></li>
+                                <li> <a href ="instruct_page.html"> Instructions </a> </li>
+                        </ul>
+                </h3>
+        </div>   
+</body>
+
+</html>

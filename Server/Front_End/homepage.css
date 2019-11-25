@@ -1,0 +1,39 @@
+
+#description{
+    margin: auto;
+    text-align: center;
+    width: 500;
+    background-image: linear-gradient(yellow, red);
+    color: 
+}
+#body{
+    background-image: linear-gradient(red, yellow);
+}
+
+#links{
+    float: left;
+    border-style: dotted; 
+    border-width: 20px;
+    border-color: red yellow orange;
+    background-color: papayawhip;
+    width: 200;
+}
+
+#form{
+    margin: auto;
+    text-align: center;
+}
+
+#screenshots{
+    float: left;
+    width: 33%;
+    padding: 2px;
+}
+*{
+    box-sizing: border-box;
+}
+#tutorials{
+    float: right;
+    width: 33%;
+    padding: 1px;
+}
