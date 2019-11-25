@@ -38,7 +38,7 @@ $(function gamestart() {
     var ps_team = 0;
     var fj_team = 0;
 
-   
+    
 
     assignTeam();
     makeSpider();
@@ -46,12 +46,40 @@ $(function gamestart() {
 
     document.addEventListener('keydown', BeginMovement)
 
+    moveup.onclick = function mobilemoveU(){
+        MoveUp = true;
+        MoveLeft = false;
+        MoveRight = false;
+        MoveDown = false;
+    };
 
+    moveleft.onclick = function mobilemoveL(){
+        MoveUp = false;
+        MoveLeft = true;
+        MoveRight = false;
+        MoveDown = false;
+    };
+
+    moveright.onclick = function mobilemoveR(){
+        MoveUp = false;
+        MoveLeft = false;
+        MoveRight = true;
+        MoveDown = false;
+    };
+
+    movedown.onclick = function mobilemoveD(){
+        MoveUp = false;
+        MoveLeft = false;
+        MoveRight = false;
+        MoveDown = true;
+    };
     
     var team_ps_score = 0;
     var team_fj_score = 0;
     document.getElementById('ps_score').innerHTML = "" + team_ps_score;
     document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+
+   
 
     function assignTeam() {
         if (ps_team == fj_team) {
@@ -128,17 +156,17 @@ $(function gamestart() {
 
     function Movementloop() {
 
-        if (team_ps_score >= 60) {
+        if (team_ps_score >= 31) {
             team_ps_score = 0;
             setInterval(gamestart(), 6000)
-            return alert("hey")
+            return alert("The Final Score was 30 please press ok if you would like to replay the Offline demo")
             
             
         }
-        if(team_fj_score >= 60){
+        if(team_fj_score >= 30){
             team_fj_score = 0;
             setInterval(gamestart(), 6000)
-            return alert("hey")
+            return alert("The Final Score was 30 please press ok if you would like to replay the Offline demo")
         }
         spider = spiderman;
 
@@ -164,6 +192,7 @@ $(function gamestart() {
             window.scrollBy(-5, 0);
         }
 
+       
         window.requestAnimationFrame(Movementloop)
 
     }

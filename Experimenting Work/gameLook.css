@@ -38,6 +38,12 @@
     position: fixed;
     text-align: center;
 }
+.Mobile_Move{
+    left: 2%;
+    bottom: 10%;
+    position: fixed;
+    text-align: center;
+}
 
 .score {
     font-size: 20px;
@@ -46,3 +52,4 @@
     padding: 800px;
     float: left;
 }
+
