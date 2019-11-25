@@ -1,0 +1,30 @@
+Disclaimer: This File was supposed to be updated and added to the gitlab every week. It was being updated however I forgot to upload it every week whenever a change was made to it 
+since it was origionally on a word document on my computer however I have now transfered it onto a file inside of vs code to be uploaded with eveything else.
+
+week 1: this week we began work on laying the general framework for the game in html and css mostly though we created the wireframes to give a good plan idea
+
+week 2: this week we finished up some more of the html and began making a start on the javascript this week aswell 
+
+week 3: the javascript for the code is proving fairly alight just now currently the player model is being held in a div for movement but we dont know if it will work in the future.
+
+week 4: morw work was still being done on the javascript it is proving slightly more difficult now as we are trying to work out a way to make random objects spawn all over the screen properly
+
+week 5: the initial schedule was clearly hoping for far to much as we are now still working on creating the javascript for the game it is progressing but slowly we have now decieded
+to use a canvas to spawn the random objects around the screen this could cause issues with the player sprite
+
+week 6 other courseworks are slowing the work on this one but progress is still being made Qamar has left which will put us further behind schedule however since he was incharge of 
+doing the server/database side of things while we got the game itself working
+
+week 7: work has begun heavily on collision and getting spiderman to be placed onto a canvas currently as the div version will not work properly since he cannot collied with anything 
+on the canvas when he is a div this however has created the issue that we have to learn how to move something on the canvas
+
+week 8: canvas movement has been mostly figured out however getting spiderman to interact with the objects on the canvas is also still quite difficult however nathaneal is working
+on this issue so hopefully he will be able to figure it out
+
+week 9: We are definetly behind schedule as we are only just really starting to look into how to get the web side of the game running the inital plan was to use the fiels that Qamar
+had left behind however these files are not all that useful as we dont think they will work for our game
+
+week 10: we are rushing to get alot of the work done the game itself functions almost perfectly now on the clientside however a databse and a server side has not been created yet 
+work is being done on it but it is not going well
+
+week 11: this is only for the last part of time spent working on it the game has still not been made to be multiplyaer the singleplayer is perfect but it cannot be made multiplayer 
