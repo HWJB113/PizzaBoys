@@ -13,11 +13,13 @@ $(function(){
     var objects=[];
 
     var pizza = new Image();
-    pizza.src = "Images/pizza.png"
+    pizza.src = "../Media/pizza.png"
+
+    var socket = io();
 
     var spiderman;
     var spiderimg = new Image();
-    spiderimg.src = "Images/spiderR.gif"
+    spiderimg.src = "../Media/spiderR.gif"
 
     var MoveUp = false;
     var MoveRight = false;
@@ -26,11 +28,9 @@ $(function(){
     var LastDirection;
     var NewDirection;
 
-    
-    
 
     var music;
-    music = new Audio("PizzaTime.ogg");
+    music = new Audio("../Media/PizzaTime.ogg");
     music.addEventListener('ended', LoopMusic)
 
     function LoopMusic(){
@@ -167,27 +167,32 @@ $(function(){
         if (NewDirection !== LastDirection){
             if (NewDirection === 1){
                 
-                spiderimg.src="Images/spiderR.gif"
+                spiderimg.src="../Media/spiderR.gif"
                 LastDirection = NewDirection;
             }
             if (NewDirection === 0){
-                spiderimg.src="Images/spiderU.gif"
+                spiderimg.src="../Media/spiderU.gif"
                 LastDirection = NewDirection;
             }
             
             if (NewDirection === 2){
                 
-                spiderimg.src="Images/spiderD.gif"
+                spiderimg.src="../Media/spiderD.gif"
                 LastDirection = NewDirection;
             }
             if (NewDirection === 3){
-                spiderimg.src="Images/spiderL.gif"
+                spiderimg.src="../Media/spiderL.gif"
                 LastDirection = NewDirection;
             }
         }
         }
         
         window.requestAnimationFrame(Movementloop)
+
+        socket.emit('new player');
+        setInterval(function() {
+            socket.emit('movement', movement);
+        }, 1000 / 60);
 
 
     function spawnObject(){
