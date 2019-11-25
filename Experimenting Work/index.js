@@ -1,6 +1,8 @@
 $(function gamestart() {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.canvas.width = 3500;
     ctx.canvas.height = 3500;
@@ -38,7 +40,7 @@ $(function gamestart() {
     var ps_team = 0;
     var fj_team = 0;
 
-   
+    
 
     assignTeam();
     makeSpider();
@@ -46,12 +48,48 @@ $(function gamestart() {
 
     document.addEventListener('keydown', BeginMovement)
 
+    MoveUpM.onclick = function mobilemoveU(){
+        MoveUp = true;
+        MoveLeft = false;
+        MoveRight = false;
+        MoveDown = false;
+    };
 
+    MoveLeftM.onclick = function mobilemoveL(){
+        MoveUp = false;
+        MoveLeft = true;
+        MoveRight = false;
+        MoveDown = false;
+    };
+
+    
+    Stop.onclick = function StopMovement(){
+        MoveUp = false;
+        MoveLeft = false;
+        MoveRight = false;
+        MoveDown = false;
+    };
+
+    MoveRightM.onclick = function mobilemoveR(){
+        MoveUp = false;
+        MoveLeft = false;
+        MoveRight = true;
+        MoveDown = false;
+    };
+
+    MoveDownM.onclick = function mobilemoveD(){
+        MoveUp = false;
+        MoveLeft = false;
+        MoveRight = false;
+        MoveDown = true;
+    };
     
     var team_ps_score = 0;
     var team_fj_score = 0;
     document.getElementById('ps_score').innerHTML = "" + team_ps_score;
     document.getElementById('fj_score').innerHTML = "" + team_fj_score;
+
+   
 
     function assignTeam() {
         if (ps_team == fj_team) {
@@ -128,17 +166,17 @@ $(function gamestart() {
 
     function Movementloop() {
 
-        if (team_ps_score >= 60) {
+        if (team_ps_score >= 31) {
             team_ps_score = 0;
             setInterval(gamestart(), 6000)
-            return alert("hey")
+            return alert("The Final Score was 30 please press ok if you would like to replay the Offline demo")
             
             
         }
-        if(team_fj_score >= 60){
+        if(team_fj_score >= 30){
             team_fj_score = 0;
             setInterval(gamestart(), 6000)
-            return alert("hey")
+            return alert("The Final Score was 30 please press ok if you would like to replay the Offline demo")
         }
         spider = spiderman;
 
@@ -164,6 +202,7 @@ $(function gamestart() {
             window.scrollBy(-5, 0);
         }
 
+       
         window.requestAnimationFrame(Movementloop)
 
     }
@@ -236,13 +275,15 @@ $(function gamestart() {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         var spider = spiderman;
-        
+        ctx.fillStyle = "blue";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
         for (var i = 0; i < objects.length; i++) {
             var object = objects[i];
             ctx.drawImage(object.image, object.x, object.y, object.width, object.height);
             ctx.drawImage(spider.image, spider.x, spider.y, spider.height, spider.width);
+            
             
 
             if (spider.x < object.x + object.width &&
